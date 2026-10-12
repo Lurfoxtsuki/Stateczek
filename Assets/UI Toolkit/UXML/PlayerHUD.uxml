@@ -1,0 +1,4 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Label text="Sail: 100%" name="SailExpansion" style="height: 16px; font-size: 22px;"/>
+    <ui:Label text="Rotation: 0°" name="SailRotation" style="font-size: 22px;"/>
+</ui:UXML>
