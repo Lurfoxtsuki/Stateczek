@@ -1,4 +1,19 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Label text="Sail: 100%" name="SailExpansion" style="height: 16px; font-size: 22px;"/>
-    <ui:Label text="Rotation: 0°" name="SailRotation" style="font-size: 22px;"/>
+    <ui:VisualElement data-source="project://database/Assets/Scripts/ShipData.asset?fileID=11400000&amp;guid=dd122fc8d07cba64597faf8ebc8999cb&amp;type=2#ShipData" style="flex-grow: 1; font-size: 20px;">
+        <ui:Label text="Sail: 100%" name="SailStatus" style="height: auto; font-size: 20px;">
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="StatusText" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:Label>
+        <ui:Label text="Rotation: 0°" name="SailRotation" style="font-size: 20px;">
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="RotationText" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:Label>
+        <ui:Label text="Label" name="Velocity" style="-unity-text-align: upper-left;">
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="VelocityText" binding-mode="ToTarget"/>
+            </Bindings>
+        </ui:Label>
+    </ui:VisualElement>
 </ui:UXML>
