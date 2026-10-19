@@ -428,6 +428,7 @@ GameObject:
   - component: {fileID: 419744792}
   - component: {fileID: 419744791}
   - component: {fileID: 419744790}
+  - component: {fileID: 419744794}
   m_Layer: 0
   m_Name: Water_Plane
   m_TagString: Untagged
@@ -522,13 +523,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419744789}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 500, y: 1, z: 500}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &419744794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419744789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0c46c62b45d40479851420faf00ee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaterPlane
+  _shipTransform: {fileID: 491713330}
 --- !u!1 &491713329
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,12 +642,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShipMovement
   _sailControlsAction: {fileID: 7848533973667467461, guid: b10898010d7d4b5498bfdb7768cc9492, type: 3}
   _shipData: {fileID: 11400000, guid: dd122fc8d07cba64597faf8ebc8999cb, type: 2}
-  _sailStatusSpeed: 20
-  _sailRotationSpeed: 20
-  _windTurningStrength: 4
-  _windDirection: {x: 1, y: 0, z: 0}
+  _sailStatusSpeed: 60
+  _sailRotationSpeed: 80
+  _mass: 2
+  _angularDrag: 2
+  _windDirection: {x: 1, y: 0, z: 1}
   _windSpeed: 16
-  _waterDrag: 0.5
+  _waterDrag: 0.1
+  _windTurningStrength: 100
   _windParticles: {fileID: 678179276}
 --- !u!198 &678179276 stripped
 ParticleSystem:
@@ -1160,6 +1176,30 @@ PrefabInstance:
     - target: {fileID: 1493981459235567083, guid: fc9c20e9f34508e4d87b32673ed3e3e4, type: 3}
       propertyPath: m_Name
       value: Wind
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026766454707103739, guid: fc9c20e9f34508e4d87b32673ed3e3e4, type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026766454707103739, guid: fc9c20e9f34508e4d87b32673ed3e3e4, type: 3}
+      propertyPath: SizeModule.curve.scalar
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026766454707103739, guid: fc9c20e9f34508e4d87b32673ed3e3e4, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026766454707103739, guid: fc9c20e9f34508e4d87b32673ed3e3e4, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026766454707103739, guid: fc9c20e9f34508e4d87b32673ed3e3e4, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026766454707103739, guid: fc9c20e9f34508e4d87b32673ed3e3e4, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8926420647980214107, guid: fc9c20e9f34508e4d87b32673ed3e3e4, type: 3}
       propertyPath: m_LocalPosition.x
